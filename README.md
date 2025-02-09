@@ -17,6 +17,7 @@ These codes are designed to give a basic overview of the C programming language,
 
 ## Parallel processing using OpenMP
 
+Please refer to the [OpenMP readme file](./OMP_README.md).
 
 ## Parallel processing using GPU (CUDA)
 
