@@ -192,9 +192,14 @@ valgrind ./main.exe
 
 ### Expected output
 
-If executed with **"./main.exe test"** the expected output is:
+If executed with **"valgrind ./main.exe"** the expected output is:
 
 ```bash
+==375108== Memcheck, a memory error detector
+==375108== Copyright (C) 2002-2022, and GNU GPLd, by Julian Seward et al.
+==375108== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==375108== Command: ./main.exe
+==375108== 
 Sqrt of (0+0) = 0.000000e+00
 Sqrt of (1+2) = 1.732051e+00
 Sqrt of (2+4) = 2.449490e+00
@@ -225,4 +230,13 @@ Sqrt of (26+52) = 8.831760e+00
 Sqrt of (27+54) = 9.000000e+00
 Sqrt of (28+56) = 9.165152e+00
 Sqrt of (29+58) = 9.327379e+00
+==375108== 
+==375108== HEAP SUMMARY:
+==375108==     in use at exit: 0 bytes in 0 blocks
+==375108==   total heap usage: 4 allocs, 4 frees, 1,384 bytes allocated
+==375108== 
+==375108== All heap blocks were freed -- no leaks are possible
+==375108== 
+==375108== For lists of detected and suppressed errors, rerun with: -s
+==375108== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
