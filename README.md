@@ -10,8 +10,8 @@ These codes are designed to give a basic overview of the C programming language,
 [1 - Hello World](#hello_world)  
 [2 - Simple Functions in C](#simple_functions)  
 [3 - Arrays in C using the stack](#stack_arrays)  
-[4 - Arrays in C allocated on the heap](#heap_arrays)
-
+[4 - Arrays in C allocated on the heap](#heap_arrays)  
+[5 - Arrays allocated externally in a function](#arrays_allocation_in_function)
 ## Parallel processing using OpenMP
 
 
@@ -240,3 +240,33 @@ Sqrt of (29+58) = 9.327379e+00
 ==375108== For lists of detected and suppressed errors, rerun with: -s
 ==375108== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
+
+<a id="arrays_allocation_in_function"></a>
+## 5 - Creating arrays on the heap with external functions
+
+The fifth code used as part of this course; it serves to give a demonstration on:
+* Writing a C code which creates a few simple arrays using malloc, and
+* Does this memory allocation externally in a function.
+
+Before running the commands below, make sure you are in the correct directory. From the repository root directory, type:
+
+```bash
+cd 5_Arrays_Functions
+```
+
+To build:
+```bash
+make
+```
+To execute:
+```bash
+./main.exe
+```
+To check for memory leaks with Valgrind:
+```bash
+valgrind ./main.exe
+```
+
+### Expected output
+
+If executed with **"valgrind ./main.exe"** the expected output is identical to that shown in [the previous section](#heap_arrays).
