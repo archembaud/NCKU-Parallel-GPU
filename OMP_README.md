@@ -8,6 +8,7 @@ Return to the [main repository documentation](./README.md).
 
 [7 - OpenMP Hello World](#omp_hello_world)  
 [8 - OpenMP Improved Hello World](#omp_hello_again)  
+[9 - Parallel Vector x Constant multiplication](#omp_vector_constant)  
 
 <a id="omp_hello_world"></a>
 ## 7 - OpenMP Hello World
@@ -51,4 +52,36 @@ The number of "Hello!" messages you will see depends on your machine. Assuming y
 ```bash
 Hello again from thread 0
 Hello again from thread 1
+```
+<a id="omp_vector_constant"></a>
+## 9 - OpenMP Vector Multiplication by Constant
+
+Finally, a useful computation. Here we take a small array and multiply the elements of the array by a constant through the division of work across multiple threads.
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd 9_OMP_Vector_Multiply_Constant
+make && ./main.exe
+```
+
+### Expected Output
+
+```bash
+Original value of a[0] = 0
+Original value of a[1] = 1
+Original value of a[2] = 2
+Original value of a[3] = 3
+Original value of a[4] = 4
+Original value of a[5] = 5
+Original value of a[6] = 6
+Original value of a[7] = 7
+Final value of a[0] = 0
+Final value of a[1] = 0.5
+Final value of a[2] = 1
+Final value of a[3] = 1.5
+Final value of a[4] = 2
+Final value of a[5] = 2.5
+Final value of a[6] = 3
+Final value of a[7] = 3.5
 ```
