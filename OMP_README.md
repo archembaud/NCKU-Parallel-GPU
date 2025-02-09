@@ -9,6 +9,7 @@ Return to the [main repository documentation](./README.md).
 [7 - OpenMP Hello World](#omp_hello_world)  
 [8 - OpenMP Improved Hello World](#omp_hello_again)  
 [9 - Parallel Vector x Constant multiplication](#omp_vector_constant)  
+[10 - The OMP For Pragma](#omp_for)  
 
 <a id="omp_hello_world"></a>
 ## 7 - OpenMP Hello World
@@ -84,4 +85,35 @@ Final value of a[4] = 2
 Final value of a[5] = 2.5
 Final value of a[6] = 3
 Final value of a[7] = 3.5
+```
+
+<a id="omp_for"></a>
+## 10 - OpenMP For Pragma
+
+This demo covers the use of the **omp for** pragma, and two scheduling options (dynamc, static).
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd 10_OMP_For_demo
+make && ./main.exe
+```
+
+### Expected Output
+
+This can be random, as it depends on your system and hardware scheduling - but your output should take the form:
+
+```bash
+Static element thread[0] = 0, Dynamic element thread[0] = 0
+Static element thread[1] = 0, Dynamic element thread[1] = 0
+Static element thread[2] = 1, Dynamic element thread[2] = 0
+Static element thread[3] = 1, Dynamic element thread[3] = 0
+Static element thread[4] = 2, Dynamic element thread[4] = 0
+Static element thread[5] = 2, Dynamic element thread[5] = 0
+Static element thread[6] = 3, Dynamic element thread[6] = 0
+Static element thread[7] = 3, Dynamic element thread[7] = 0
+Static element thread[8] = 0, Dynamic element thread[8] = 0
+Static element thread[9] = 0, Dynamic element thread[9] = 0
+Static element thread[10] = 1, Dynamic element thread[10] = 0
+Static element thread[11] = 1, Dynamic element thread[11] = 0
 ```
