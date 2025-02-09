@@ -11,6 +11,8 @@ Return to the [main repository documentation](./README.md).
 [9 - Parallel Vector x Constant multiplication](#omp_vector_constant)  
 [10 - The OMP For Pragma](#omp_for)  
 [11 - A simple dot product with OMP](#omp_dot_product)  
+[12 - Single, Critical and Master](#single_critical_master)  
+
 
 <a id="omp_hello_world"></a>
 ## 7 - OpenMP Hello World
@@ -137,4 +139,38 @@ make && ./main.exe
 ```bash
 Dot product of a,b = 170688
 Dot product of a,b using openmp = 170688
+```
+
+<a id="single_critical_master"></a>
+## 11 - Single, critical and master in OpenMP
+
+Here we introduce the concept of single, critical and master in OpenMP; this makes it possible to safely ensure one (or all) threads perform work in a sequential manner, despite multiple threads being present.
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd 12_OMP_Critical_Single
+make && ./main.exe
+```
+
+### Expected Output
+
+There will be some variation in this result due to differences in hardware scheduling, but the output should take the form:
+
+```bash
+Thread 1 resetting counts a and b
+Thread 11 incrementing a count
+Thread 4 incrementing a count
+Thread 3 incrementing a count
+Thread 5 incrementing a count
+Thread 1 incrementing a count
+Thread 10 incrementing a count
+Thread 7 incrementing a count
+Thread 2 incrementing a count
+Thread 9 incrementing a count
+Thread 6 incrementing a count
+Thread 0 incrementing a count
+Thread 0 incrementing b count
+Thread 8 incrementing a count
+Values of a, b = 12, 1
 ```
