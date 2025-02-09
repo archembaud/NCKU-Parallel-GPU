@@ -10,6 +10,7 @@ Return to the [main repository documentation](./README.md).
 [8 - OpenMP Improved Hello World](#omp_hello_again)  
 [9 - Parallel Vector x Constant multiplication](#omp_vector_constant)  
 [10 - The OMP For Pragma](#omp_for)  
+[11 - A simple dot product with OMP](#omp_dot_product)  
 
 <a id="omp_hello_world"></a>
 ## 7 - OpenMP Hello World
@@ -116,4 +117,24 @@ Static element thread[8] = 0, Dynamic element thread[8] = 0
 Static element thread[9] = 0, Dynamic element thread[9] = 0
 Static element thread[10] = 1, Dynamic element thread[10] = 0
 Static element thread[11] = 1, Dynamic element thread[11] = 0
+```
+
+<a id="omp_dot_product"></a>
+## 11 - A simple dot product using OpenMP
+
+Here we use openmp to accelerate the computation of a simple dot product, using
+both a standard omp for loop, and an **openmp for reduction**.
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd 11_OMP_Dot_Product
+make && ./main.exe
+```
+
+### Expected Output
+
+```bash
+Dot product of a,b = 170688
+Dot product of a,b using openmp = 170688
 ```
