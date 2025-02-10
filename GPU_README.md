@@ -1,0 +1,63 @@
+# GPU Parallelization using CUDA
+
+This documentation refers to the source codes used in the folders prefixed with G_, which mainly examine the use of CUDA for acceleration of computation through the use of Nvidia GPU devices.
+
+Return to the [main repository documentation](./README.md).
+
+**Table of Contents / Quick Links**
+
+[G1 - Allocating memory in CUDA](#gpu_memory)
+[G2 - Allocating memory in CUDA](#gpu_memcpy)
+
+<a id="gpu_memory"></a>
+## G1 - Memory Allocation using CUDA
+
+This code simply compares and contrasts setting memory on a GPU device, and setting memory on a host (i.e. CPU). To this end, all variables for use by CPU's are prefixed with "h_"  (host) while variables designed for execution on the GPU are prefixed with "d_" (device).
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd G_1_Memory/
+make && ./main.exe
+```
+
+### Expected Output
+```bash
+CUDA error (malloc d_a) = no error
+```
+
+<a id="gpu_memcpy"></a>
+## G2 - Moving data between the device and the host
+
+In this code, we move an array of data from the host to the device, and then back
+to the host - in a different memory space.
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd G_2_MemCpy/
+make && ./main.exe
+```
+
+### Expected Output
+
+A snippet of the output is shown below:
+
+```bash
+CUDA error (malloc d_a) = no error
+CUDA error (memcpy h_a -> d_a) = no error
+CUDA error (memcpy d_a -> h_b) = no error
+Value of h_b[0] = 0
+Value of h_b[1] = 1
+Value of h_b[2] = 2
+Value of h_b[3] = 3
+Value of h_b[4] = 4
+Value of h_b[5] = 5
+Value of h_b[6] = 6
+Value of h_b[7] = 7
+Value of h_b[8] = 8
+Value of h_b[9] = 9
+Value of h_b[10] = 10
+Value of h_b[11] = 11
+Value of h_b[12] = 12
+```
