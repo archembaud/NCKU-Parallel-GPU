@@ -1,7 +1,7 @@
 # Introduction to Multi-Core CPU and GPU Computing
 Codes used as part of a course on parallel and GPU computing. These provide a basic introduction to parallel compute with a focus on scientific and mathematical computing. The goal is to provide a means for engineering and science students to write code which executes faster on modern hardware.
 
-These codes can be subdivided into 4 categories:
+These codes can be subdivided into 5 categories:
 
 ## Basic C introduction codes
 
@@ -23,6 +23,11 @@ Please refer to the [OpenMP readme file](./OMP_README.md).
 
 
 ## Mathematics and Engineering Applications
+
+## SIMD Vectorization using SSE and AVX
+
+Please refer to the [SIMD readme file](./SIMD_README.md).
+
 
 
 <a id="hello_world"></a>
