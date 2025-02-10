@@ -6,8 +6,9 @@ Return to the [main repository documentation](./README.md).
 
 **Table of Contents / Quick Links**
 
-[G1 - Allocating memory in CUDA](#gpu_memory)
-[G2 - Allocating memory in CUDA](#gpu_memcpy)
+[G1 - Allocating memory in CUDA](#gpu_memory)  
+[G2 - Allocating memory in CUDA](#gpu_memcpy)  
+[G3 - Vector x C in CUDA](#gpu_vec_by_c)
 
 <a id="gpu_memory"></a>
 ## G1 - Memory Allocation using CUDA
@@ -60,4 +61,38 @@ Value of h_b[9] = 9
 Value of h_b[10] = 10
 Value of h_b[11] = 11
 Value of h_b[12] = 12
+```
+
+<a id="gpu_vec_by_c"></a>
+## G3 - Multiplication of a vector by a constant in CUDA
+
+The first real computation using CUDA - in this example, we multiply a vector by a constant using the GPU. 
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd G_3_Vector_Multiply_Constant/
+make && ./main.exe
+```
+
+### Expected Output
+
+A snippet of the output is shown below:
+```bash
+CUDA error (malloc d_a) = no error
+CUDA error (memcpy h_a -> d_a) = no error
+CUDA error (memcpy d_a -> h_b) = no error
+Value of h_b[0] = 0
+Value of h_b[1] = 0.5
+Value of h_b[2] = 1
+Value of h_b[3] = 1.5
+Value of h_b[4] = 2
+Value of h_b[5] = 2.5
+Value of h_b[6] = 3
+Value of h_b[7] = 3.5
+Value of h_b[8] = 4
+Value of h_b[9] = 4.5
+Value of h_b[10] = 5
+Value of h_b[11] = 5.5
+Value of h_b[12] = 6
 ```
