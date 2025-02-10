@@ -4,10 +4,10 @@
 // Device Functions
 
 __global__ void GPU_Vector_Times_Constant(float *a, float C, int N) {
-	int i = blockDim.x * blockIdx.x + threadIdx.x;
-	if (i < N) {
-		a[i] = C*a[i];
-	}
+    int i = blockDim.x * blockIdx.x + threadIdx.x;
+    if (i < N) {
+        a[i] = C*a[i];
+    }
 }
 
 // Host Functions
