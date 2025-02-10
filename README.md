@@ -21,6 +21,7 @@ Please refer to the [OpenMP readme file](./OMP_README.md).
 
 ## Parallel processing using GPU (CUDA)
 
+Please refer to the [GPU readme file](./GPU_README.md).
 
 ## Mathematics and Engineering Applications
 
