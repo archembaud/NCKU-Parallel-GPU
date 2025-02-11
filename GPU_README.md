@@ -8,7 +8,7 @@ Return to the [main repository documentation](./README.md).
 
 [G1 - Allocating memory in CUDA](#gpu_memory)  
 [G2 - Allocating memory in CUDA](#gpu_memcpy)  
-[G3 - Vector x C in CUDA](#gpu_vec_by_c)
+[G3 - Vector x C in CUDA](#gpu_vec_by_c)  
 [G4 - Partial Dot Product using Parallel Reduction in CUDA](#gpu_dot_product)
 
 <a id="gpu_memory"></a>
