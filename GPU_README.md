@@ -120,13 +120,13 @@ make && ./main.exe
 A snippet of the output is shown below:
 
 ```bash
-CUDA error (malloc d_a) = no error
-CUDA error (malloc d_a) = no error
-CUDA error (malloc d_a) = no error
+CUDA error (malloc d_x) = no error
+CUDA error (malloc d_y) = no error
+CUDA error (malloc d_z) = no error
 Serial dot product = 1000
-CUDA error (memcpy h_a -> d_a) = no error
-CUDA error (memcpy h_a -> d_a) = no error
-CUDA error (memcpy d_a -> h_b) = no error
+CUDA error (memcpy host -> d_x) = no error
+CUDA error (memcpy host -> d_y) = no error
+CUDA error (memcpy d_z -> host) = no error
 Value of h_z[0] = 256
 Value of h_z[1] = 256
 Value of h_z[2] = 256
