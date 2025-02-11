@@ -9,6 +9,7 @@ Return to the [main repository documentation](./README.md).
 [G1 - Allocating memory in CUDA](#gpu_memory)  
 [G2 - Allocating memory in CUDA](#gpu_memcpy)  
 [G3 - Vector x C in CUDA](#gpu_vec_by_c)
+[G4 - Partial Dot Product using Parallel Reduction in CUDA](#gpu_dot_product)
 
 <a id="gpu_memory"></a>
 ## G1 - Memory Allocation using CUDA
@@ -95,4 +96,40 @@ Value of h_b[9] = 4.5
 Value of h_b[10] = 5
 Value of h_b[11] = 5.5
 Value of h_b[12] = 6
+```
+
+<a id="gpu_dot_product"></a>
+## G4 - Partial Dot Product on GPU using Parallel Reduction and CUDA
+
+This example demonstrates the use of parallel reduction on GPU for the computation of a dot product. Here we deliberately return a result early so students can understand how parallel reduction works in GPUs; normally we'd finish the dot product on the device.
+
+The following concepts are covered:
+* Recycling allocation and memory copying functions for general use,
+* Using __syncthreads to sync efforts on the device,
+* Using __shared__ memory on the device for faster temporary storage.
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd G_4_Dot_Product/
+make && ./main.exe
+```
+
+### Expected Output
+
+A snippet of the output is shown below:
+
+```bash
+CUDA error (malloc d_a) = no error
+CUDA error (malloc d_a) = no error
+CUDA error (malloc d_a) = no error
+Serial dot product = 1000
+CUDA error (memcpy h_a -> d_a) = no error
+CUDA error (memcpy h_a -> d_a) = no error
+CUDA error (memcpy d_a -> h_b) = no error
+Value of h_z[0] = 256
+Value of h_z[1] = 256
+Value of h_z[2] = 256
+Value of h_z[3] = 232
+GPU Dot Product of h_x and h_y = 1000
 ```
