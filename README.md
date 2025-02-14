@@ -25,6 +25,8 @@ Please refer to the [GPU readme file](./GPU_README.md).
 
 ## Mathematics and Engineering Applications
 
+Please refer to the [Algorithms readme file](./ALGORITHMS.md).
+
 ## SIMD Vectorization using SSE and AVX
 
 Please refer to the [SIMD readme file](./SIMD_README.md).
