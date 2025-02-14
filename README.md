@@ -30,6 +30,26 @@ Please refer to the [GPU readme file](./GPU_README.md).
 Please refer to the [SIMD readme file](./SIMD_README.md).
 
 
+## Some General Hints and Tips
+
+* If you don't have your own computer - never fear, you can use the department machines.
+Using your own laptop is highly recommended, however.
+* If you have your own Windows laptop - install Ubuntu via WSL. The material presented here assumes a linux environment, and WSL is an excellent alternative to a native linux distribution.
+* If you have your own Laptop - install VS Code as your editor, and then install the remote ssh extension.
+This will allow you to remotely connect to the Department's GPU server and write code in a more familiar environment (for some).
+```bash
+https://code.visualstudio.com/docs/remote/ssh
+```
+* You can transfer folders to the remote server using the *scp* commmand - for instance, let's say you want
+to transfer the G_2_MemCpy folder to the remote, type:
+```bash
+ scp -r ./G_2_MemCpy/ YOUR_USER_NAME@140.116.31.227:~
+```
+This will make a copy of the folder in your home directory. Don't forget to replace YOUR_USER_NAME with your
+user name.
+
+
+
 
 <a id="hello_world"></a>
 ## 1 - Hello World
