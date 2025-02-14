@@ -7,6 +7,8 @@ Return to the [main repository documentation](./README.md).
 **Table of Contents**
 
 [1 -Conjugate Gradient Solver](#cg)  
+[2 -1D FTCS Finite Difference Solver](#1dftcs)  
+
 
 <a id="cg"></a>
 ## 1 - Conjugate Gradient Method
@@ -64,3 +66,22 @@ RTR_Record =
 You could use this to solve any problem where you might need to:
 * Compute a steady temperature field (perhaps using Finite Difference), or
 * Compute displacement, strain and stress in a solid (Finite Element)
+
+<a id="1dftcs"></a>
+## 2 - 1D FTCS Finite Difference Solver for Heat Transfer
+
+Another problem well suited to studies in parallel computing for engineering students, the 1D FTCS method is also well documented in [Wikipedia](https://en.wikipedia.org/wiki/FTCS_scheme). It is an explicit method, meaning the temperatures computed at time step (k+1) are computed based on values of temperature throughout the bar at time (k). It's useful for us because is is generally easily vectorized, which makes it ideal for GPU compute, or using the SIMD registers in a CPU.
+
+### Running the code
+
+Open up Matlab (or Octave), set your workspace to the same location as the file (**FTCS_1D.m**) and run this command in the command window:
+
+```matlab
+[x] = FTCS_Method(100, 10)
+```
+
+### Expected Result
+
+You should see a graph showing the temperature starting to "diffuse" outwards; with the boundary conditions I've selected here, eventually the 1D bar will reach a steady temperature - I'll leave the computation of this temperature to the students.
+
+![image](./A_2_FTCS_Method/1D_FTCS_Tempreature.png)
