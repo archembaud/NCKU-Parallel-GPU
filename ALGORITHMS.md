@@ -6,9 +6,9 @@ Return to the [main repository documentation](./README.md).
 
 **Table of Contents**
 
-[1 -Conjugate Gradient Solver](#cg)  
-[2 -1D FTCS Finite Difference Solver](#1dftcs)  
-
+[1 - Conjugate Gradient Solver](#cg)  
+[2 - 1D FTCS Finite Difference Solver](#1dftcs)  
+[3 - 2D Finite Element Solver](#2dfem) 
 
 <a id="cg"></a>
 ## 1 - Conjugate Gradient Method
@@ -85,3 +85,60 @@ Open up Matlab (or Octave), set your workspace to the same location as the file 
 You should see a graph showing the temperature starting to "diffuse" outwards; with the boundary conditions I've selected here, eventually the 1D bar will reach a steady temperature - I'll leave the computation of this temperature to the students.
 
 ![image](./A_2_FTCS_Method/1D_FTCS_Tempreature.png)
+
+<a id="2dfem"></a>
+## 2 - 2D Finite Element Method (FEM) using Constant Strain Triangles (CST) elements
+
+The Finite Element Method (FEM) is a cornerstone engineering analysis tool used by engineers to solve for displacement and stress in structures under load. This example provides Matlab / Octave codes which:
+* Construct a stiffness matrix K for triangular plate elements,
+* Allows students to select loading conditions and boundary constraints, and
+* Inverts the Kx = F system of equations, where x is the displacement and F is the loading on the structure.
+
+Once this is done, you can compute the stress - a code is provided for this as well.
+
+In this example, we have a plate made up of a large number of smaller, triangular plates. There are 11 nodes in total:
+
+* 3 nodes at x = 0 and y = 0, 0.25 and 0.5 which are fixed (i.e. cannot move). These are nodes 1, 4 and 7.
+* 8 nodes which are free and can move. One of these nodes (Node 5) has a force applied in the Y direction.
+
+In the code, the triangular plate elements are defined by choosing any 3 nodes. These 3 nodes should be ordered properly - here, I've used a counter-clockwise ordering. Inconsistent ordering will produce inconsistent results, so take care.
+
+
+### Running the code
+
+Open up Matlab (or Octave), set your workspace to the same location as the file (**Example_Problem.m**) and run this command in the command window:
+
+```matlab
+Example_Problem()
+```
+
+### Expected Result
+
+You should see a graph showing the deformation of the L-shaped plate as a result of the load.
+
+![image](./A_3_FEM_Method/Result.png)
+
+On the terminal you should see:
+
+```matlab
+u =
+
+   1.1578e-06
+  -3.0103e-06
+   4.3240e-07
+  -1.6573e-06
+   1.3335e-08
+  -4.1701e-06
+  -4.0890e-07
+  -1.7617e-06
+  -1.3399e-06
+  -3.5282e-06
+  -5.2988e-07
+  -4.5258e-06
+   8.3232e-08
+  -5.1144e-06
+  -1.2700e-06
+  -5.2903e-06
+```
+
+These are the displacements of the 8 movable nodes in the problem in the x and y directions (16 total values). The other nodes (at x = 0) are fixed in x and y - hence they do not appear in the solution.
