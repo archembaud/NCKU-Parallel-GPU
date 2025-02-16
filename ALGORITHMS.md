@@ -87,7 +87,7 @@ You should see a graph showing the temperature starting to "diffuse" outwards; w
 ![image](./A_2_FTCS_Method/1D_FTCS_Tempreature.png)
 
 <a id="2dfem"></a>
-## 2 - 2D Finite Element Method (FEM) using Constant Strain Triangles (CST) elements
+## 3 - 2D Finite Element Method (FEM) using Constant Strain Triangles (CST) elements
 
 The Finite Element Method (FEM) is a cornerstone engineering analysis tool used by engineers to solve for displacement and stress in structures under load. This example provides Matlab / Octave codes which:
 * Construct a stiffness matrix K for triangular plate elements,
