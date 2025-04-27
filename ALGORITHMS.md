@@ -8,7 +8,9 @@ Return to the [main repository documentation](./README.md).
 
 [1 - Conjugate Gradient Solver](#cg)  
 [2 - 1D FTCS Finite Difference Solver](#1dftcs)  
-[3 - 2D Finite Element Solver](#2dfem) 
+[3 - 2D Finite Element Solver](#2dfem)  
+[4 - 2D FTCS Solver](#2dftcs)  
+
 
 <a id="cg"></a>
 ## 1 - Conjugate Gradient Method
@@ -142,3 +144,22 @@ u =
 ```
 
 These are the displacements of the 8 movable nodes in the problem in the x and y directions (16 total values). The other nodes (at x = 0) are fixed in x and y - hence they do not appear in the solution.
+
+
+<a id="2dftcs"></a>
+## 4 - 2D Finite Difference solver (FTCS) for Heat Equation
+
+This is an extension of the 1D FTCS solver covered above, except in this case we consider a 2D geometry where the thermal diffusivity changes depending on the location. For this problem, there are several regions in the flow field where the thermal diffusivity is greater than the surrounding regions, meaning heat flows faster in these regions.
+
+### Running the code
+
+Open up Matlab (or Octave), set your workspace to the same location as the file (**FTCS_2D.m**) and run this command in the command window:
+
+```matlab
+FTCS_2D()
+```
+### Expected Result
+
+For an increased number of steps (used in the code) you should see the increase in temperature gradually demonstrated. Below are shown results after 100,000 and 400,000 timesteps of 0.02 seconds.
+![image](./A_4_2D_FTCS/100k_steps.png)
+![image](./A_4_2D_FTCS/400k_steps.png)
