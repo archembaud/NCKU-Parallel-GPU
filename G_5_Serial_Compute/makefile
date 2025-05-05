@@ -1,7 +1,7 @@
 all: GPU CPU
-	nvcc main.o gpu.o -arch=compute_80 -o main.exe
+	nvcc main.o gpu.o -code=sm_80 -arch=compute_80 -o main.exe
 GPU:
-	nvcc gpu.cu -c -arch=compute_80 
+	nvcc gpu.cu -c -code=sm_80 -arch=compute_80 
 CPU:
 	g++ main.c -c
 clean:
