@@ -31,6 +31,14 @@ Please refer to the [Algorithms readme file](./ALGORITHMS.md).
 
 Please refer to the [SIMD readme file](./SIMD_README.md).
 
+## Case Studies
+
+There are (at least planned) several case studies, which are larger problems looking at solving a real life problem.
+
+Each one has its own README:
+
+* 3D Heat Transfer simulation of a heat sink. See [this readme file](./C_1_3D_HT/README.md)
+
 
 ## Some General Hints and Tips
 
