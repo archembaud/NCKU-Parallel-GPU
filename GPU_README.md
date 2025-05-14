@@ -11,6 +11,8 @@ Return to the [main repository documentation](./README.md).
 [G3 - Vector x C in CUDA](#gpu_vec_by_c)  
 [G4 - Partial Dot Product using Parallel Reduction in CUDA](#gpu_dot_product)  
 [G5 - Sequential (Serial) Vector x C in CUDA](#gpu_vec_by_c_serial)  
+[G6 - Parallel Compute of Reynolds number vector in CUDA](#gpu_re)  
+
 
 <a id="gpu_memory"></a>
 ## G1 - Memory Allocation using CUDA
@@ -170,4 +172,36 @@ Value of h_b[9] = 4.5
 Value of h_b[10] = 5
 Value of h_b[11] = 5.5
 Value of h_b[12] = 6
+```
+
+
+<a id="gpu_re"></a>
+## G6 - Parallel compute of Reynolds numbers on GPU using CUDA and device functions
+
+This is an extension of G_3 - except this time, we are computing the Reynolds number based on arrays of mass flow rates and cross sectional areas. What makes this example special is its use of a CUDA device function - a function which we call on the GPU from within a kernal currently running within an SM on the device. These look like ordinary C functions, except that are prefixed with __device__.
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd G_6_Device_Functions/
+make && ./main.exe
+```
+
+### Expected Output
+
+A snippet of the output is shown below:
+```bash
+CUDA error (malloc d_mass_flow_rate) = no error
+CUDA error (malloc d_area) = no error
+CUDA error (malloc d_Re) = no error
+CUDA error (memcpy mass flow rates) = no error
+CUDA error (memcpy areas) = no error
+CUDA error (memcpy reynolds numbers) = no error
+Value of h_Re[0] = 62341.4
+Value of h_Re[1] = 62652.4
+Value of h_Re[2] = 62961.7
+Value of h_Re[3] = 63269.6
+Value of h_Re[4] = 63576
+Value of h_Re[5] = 63880.9
+Value of h_Re[6] = 64184.4
 ```
