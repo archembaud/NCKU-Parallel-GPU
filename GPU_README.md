@@ -12,7 +12,7 @@ Return to the [main repository documentation](./README.md).
 [G4 - Partial Dot Product using Parallel Reduction in CUDA](#gpu_dot_product)  
 [G5 - Sequential (Serial) Vector x C in CUDA](#gpu_vec_by_c_serial)  
 [G6 - Parallel Compute of Reynolds number vector in CUDA](#gpu_re)  
-
+[G7 - 2D FTCS in CUDA using 2D thread blocks and 2D blocks](#gpu_2dthreads)  
 
 <a id="gpu_memory"></a>
 ## G1 - Memory Allocation using CUDA
@@ -205,3 +205,39 @@ Value of h_Re[4] = 63576
 Value of h_Re[5] = 63880.9
 Value of h_Re[6] = 64184.4
 ```
+
+<a id="gpu_2dthreads"></a>
+## G6 - Parallel compute of 2D Heat Transfer using FTCS with 2D thread blocks and 2D grid blocks
+
+This is a 2D unsteady heat transfer solution using the FTCS method (covered in the algorithms section) where one boundary is a symmetry boundary while three other boundaries are fixed temperature.
+
+The really unique contribution made in this code is the use of:
+
+* 2D thread blocks - each block is made up of 256 threads in a 16x16 arrangement. This means we have 16 threads in the x direction, and 16 threads in the y direction.
+* 2D blocks in the grid - the grid is made up of an arrangement of thread blocks, layed out in 2D. Since our solver uses a 100 x 100 grid, we need 7 blocks in the x and y direction.
+
+The x and y cell - computed in the kernel - is computed directly from the block ID and thread ID in each direction instead of computing it from the 1D index we previously used in class. This is wasteful, however - there are better ways we can compute these more efficiency to avoid having so many idle threads in a kernel.
+
+### Building and Running
+
+To build and run - navigate to the directory holding this example and type "make", i.e.:
+
+```bash
+cd G_7_2D_Threads/
+make && ./main.exe
+```
+
+### Expected Output
+
+You should see this on succesful execution:
+
+```bash
+CUDA error (malloc d_T) = no error
+CUDA error (malloc d_Tnew) = no error
+CUDA error (memcpy h_T -> d_T) = no error
+CUDA error (memcpy d_T -> h_T) = no error
+```
+
+A results file (results.txt) should be present, with the computed results. These can be drawn in a contour, which should look like this:
+
+![image](./G_7_2D_Threads/2D_FTCS.png)
