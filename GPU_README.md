@@ -207,7 +207,7 @@ Value of h_Re[6] = 64184.4
 ```
 
 <a id="gpu_2dthreads"></a>
-## G6 - Parallel compute of 2D Heat Transfer using FTCS with 2D thread blocks and 2D grid blocks
+## G7 - Parallel compute of 2D Heat Transfer using FTCS with 2D thread blocks and 2D grid blocks
 
 This is a 2D unsteady heat transfer solution using the FTCS method (covered in the algorithms section) where one boundary is a symmetry boundary while three other boundaries are fixed temperature.
 
