@@ -33,11 +33,13 @@ Please refer to the [SIMD readme file](./SIMD_README.md).
 
 ## Case Studies
 
-There are (at least planned) several case studies, which are larger problems looking at solving a real life problem.
+There are (at least planned) several case studies, which are larger problems looking at solving a real life problem, or perhaps a problem which might be slightly beyond the scope of the NCKU lecture series.
 
 Each one has its own README:
 
-* 3D Heat Transfer simulation of a heat sink. See [this readme file](./C_1_3D_HT/README.md)
+* 3D Heat Transfer simulation of a heat sink. See [this readme file](./C_1_3D_HT/README.md)  
+* 2D Heat Transfer simulation of a bicycle disk brake. See [this readme file.](./C_2_Disk_Brake/README.md)  
+* 1D Heat Transfer simluation using 2x GPU cards using CUDA with OpenMP. See [this readme file.](./C_3_Multi-GPU_FTCS/README.md)
 
 
 ## Some General Hints and Tips
