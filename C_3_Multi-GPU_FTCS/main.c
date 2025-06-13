@@ -32,7 +32,8 @@ int main(int argc, char *argv[]) {
         
         int M = (int)(0.5*N + 2);  // Number of cells, including buffer region, on each gpu
 
-        // GPU_Set_Device(tid);
+        // Comment this line to run this demonstration on a single device
+        GPU_Set_Device(tid);
 
         // Allocate memory for each thread (1/2 of the domain in this case, plus 2 buffers)
         float *h_temp;
