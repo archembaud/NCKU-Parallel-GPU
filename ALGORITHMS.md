@@ -170,3 +170,8 @@ For an increased number of steps (used in the code) you should see the increase 
 ## 5 - Using CSR to store a sparse matrix generated using 2D FTCS
 
 Please refer to the dedicated README contained [here](./A_5_CSR/README.md).
+
+<a id="ftcscsr"></a>
+## 6 - Shallow Water Simulations using a 1D Finite Volume Method
+
+Please refer to the dedicated README file for the Shallow Water Equations found [here](./A_6_Upwind_SWE/README.md).
