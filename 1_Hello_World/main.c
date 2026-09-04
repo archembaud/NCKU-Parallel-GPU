@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[]) {
     int arg;
-    printf("Hello world program called with %d arguments\n", argc);
+    printf("MEOW MEOW MEOW MEOW %d arguments\n", argc);
     for (arg = 0; arg < argc; arg++) {
         printf("Argument %d is: %s\n", arg, argv[arg]);
     }
